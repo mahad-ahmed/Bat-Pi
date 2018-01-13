@@ -19,16 +19,12 @@ while True:
         time.sleep(0.00001)
         GPIO.output(18, False)
 
-        StartTime = time.time()
-        StopTime = time.time()
-     
         while GPIO.input(24) == 0:
-            StartTime = time.time()
-     
+            
+        StartTime = time.time()
         while GPIO.input(24) == 1:
-            StopTime = time.time()
-     
-        TimeElapsed = StopTime - StartTime
+            
+        TimeElapsed = StopTime - time.time()
         # distance = (TimeElapsed * 34300) / 2
         distance = (TimeElapsed * 34029) / 2
         # print("Distance: "+str(distance))
